@@ -2,9 +2,9 @@ from blink1.blink1 import Blink1
 import time
 import requests
 
-user = "sl4ureano" 
-repo = "Commit-Ligth-Alert"
-access_token = ""
+user = "gabrielveigalima" 
+repo = "HACKTUDO"
+access_token = "83a84d5fbece4baad1df9edb3bac2ff6fcddfc31"
 
 def Light():
     b1 = Blink1()
@@ -19,7 +19,7 @@ def Verify():
     try:
         request = requests.get('https://api.github.com/repos/{}/{}?access_token={}'.format(user, repo,access_token))
     except:
-        print "Request failed"
+        print ("Request failed")
         time.sleep(10)
         Main()
     data =  request.json()
@@ -27,7 +27,7 @@ def Verify():
     with open('lastcommit.txt') as f:
         lastcommit = f.readline()
     if update != lastcommit:
-        print "New Commit"
+        print ("New Commit")
         file = open("lastcommit.txt","w")
         file.write(update)
         file.close()
@@ -39,7 +39,7 @@ def Verify():
         Main()
 
 def Main():
-    print "Verify news Commits"
+    print ("Verify news Commits")
     Verify()
 
 Main()
