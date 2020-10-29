@@ -71,7 +71,3 @@ class ClassCommit():
         print ("Refresh at " + time.ctime())
         os.system('color 3')
         self.Refresh()
-
-#How to Use
-#commit = ClassCommit('sl4ureano','Commit-Ligth-Alert','fdcabe6726c162545b116e63b9045459ef56',5)
-#commit.Main()
